@@ -1,0 +1,30 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Python egg files
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+
+# GraphML cache
+*.graphml~
+
+
+
+# Ignore data files ---> For now 
+data/*.graphml
