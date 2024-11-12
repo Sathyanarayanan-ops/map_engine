@@ -1,6 +1,6 @@
 import unittest
 import networkx as nx
-from src.aStar_multi import astar_pathfind_multi_stop
+from algorithms.aStar_multi import astar_pathfind_multi_stop
 
 
 class TestAStarMultiStop(unittest.TestCase):

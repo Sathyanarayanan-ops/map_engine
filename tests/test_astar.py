@@ -1,6 +1,6 @@
 import unittest
 import networkx as nx
-from src.aStar_custom import astar_pathfinding, heuristic_distance
+from algorithms.aStar_custom import astar_pathfinding, heuristic_distance
 
 class TestAstarAlgorithm(unittest.TestCase):
     
