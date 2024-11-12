@@ -1,7 +1,7 @@
 from typing import List , Any , Optional , Dict 
 import heapq
 from geopy.distance import geodesic
-from aStar_custom import astar_pathfinding
+from .aStar_custom import astar_pathfinding
 
 def astar_pathfind_multi_stop(
     graph: Any,
