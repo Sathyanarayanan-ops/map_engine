@@ -14,6 +14,7 @@ def astar_pathfinding(
         graph (networkx.Graph): A graph object representing the road network. 
                                 Nodes must have 'x' (longitude) and 'y' (latitude) attributes.
         start_node (Any): The starting node for the pathfinding.
+        
         goal_node (Any): The target node for the pathfinding.
 
     Returns:
