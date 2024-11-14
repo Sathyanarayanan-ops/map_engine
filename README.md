@@ -1,4 +1,7 @@
 # map_engine
+
+
+'''
 project_directory/
 ├── src/                          # Source code
 │   ├── algorithms/               # Core algorithm implementations
@@ -27,3 +30,4 @@ project_directory/
 │   └── README.md               # Project overview
 │
 └── requirements.txt             # Project dependencies
+'''
