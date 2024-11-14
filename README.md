@@ -30,4 +30,4 @@ project_directory/
 │   └── README.md               # Project overview
 │
 └── requirements.txt             # Project dependencies
-'''
+
