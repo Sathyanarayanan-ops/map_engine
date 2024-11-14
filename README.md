@@ -1,2 +1,29 @@
 # map_engine
-project_directory/ ├── src/ # Source code │ ├── init.py # Makes 'src' a package │ ├── algorithms/ # Algorithms module │ │ ├── init.py │ │ ├── astar.py # Single-destination A* implementation │ │ ├── multi_stop_astar.py # Multi-stop A* implementation │ │ │ ├── utils/ # Utility code (optional) │ │ ├── init.py │ │ ├── graph_loader.py # Code for loading and preparing graphs │ │ ├── visualization.py # Code for visualizing graphs and paths │ │ │ ├── main.py # Main application logic │ ├── tests/ # Unit tests │ ├── init.py │ ├── test_astar.py # Tests for single-destination A* │ ├── test_astar_multi.py # Tests for multi-stop A* │ ├── data/ # Data storage │ ├── blacksburg_road_network.graphml # Example graph data │ ├── docs/ # Documentation │ ├── algorithms/ # Algorithm explanations (optional) │ │ ├── astar.md # Explanation of single-destination A* │ │ ├── multi_stop_astar.md # Explanation of multi-stop A* │ ├── README.md # Project overview ├── requirements.txt # Python dependencies
+project_directory/
+├── src/                          # Source code
+│   ├── algorithms/               # Core algorithm implementations
+│   │   ├── astar.py             # Single-destination A* algorithm
+│   │   ├── multi_stop_astar.py  # Multi-stop A* implementation
+│   │   └── __init__.py
+│   ├── utils/                    # Utility modules
+│   │   ├── graph_loader.py      # Graph loading and preparation
+│   │   ├── visualization.py      # Graph and path visualization
+│   │   └── __init__.py
+│   ├── main.py                  # Main application entry point
+│   └── __init__.py
+│
+├── tests/                        # Test suite
+│   ├── test_astar.py            # Single-destination A* tests
+│   ├── test_astar_multi.py      # Multi-stop A* tests
+│   └── __init__.py
+│
+├── data/                        # Data files
+│   └── blacksburg_road_network.graphml
+│
+├── docs/                        # Documentation
+│   ├── algorithms/
+│   │   ├── astar.md            # Single-destination A* explanation
+│   │   └── multi_stop_astar.md # Multi-stop A* explanation
+│   └── README.md               # Project overview
+│
+└── requirements.txt             # Project dependencies
