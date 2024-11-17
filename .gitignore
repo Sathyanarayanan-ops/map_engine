@@ -28,3 +28,7 @@ Thumbs.db
 
 # Ignore data files ---> For now 
 data/*.graphml
+
+__pycache__/
+
+cache/
