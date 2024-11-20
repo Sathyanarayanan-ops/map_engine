@@ -2,6 +2,8 @@
 from typing import List, Any
 import requests
 import osmnx as ox
+import sys
+import os 
 
 class Routing:
     def __init__(self, graph_path: str):
@@ -25,5 +27,6 @@ class Routing:
     def get_route(self, places: List[str]):
         coordinates = [self.get_coordinates(place) for place in places]
         nodes = [ox.distance.nearest_nodes(self.road_network, X=lon, Y=lat) for lat, lon in coordinates]
-        from algorithms import astar_pathfind_multi_stop
+        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+        from src.algorithms import astar_pathfind_multi_stop
         return astar_pathfind_multi_stop(self.road_network, nodes)

@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch, Mock
+from unittest.mock import patch, Mock, MagicMock
 import networkx as nx
 import sys
 import os
@@ -49,8 +49,56 @@ class TestRouting(unittest.TestCase):
             headers={'User-Agent': 'Map_Engine/1.0 (sathya05@vt.edu)'}
         )
         
-    def test_get_route():
-        pass
-    
+    @patch("osmnx.distance.nearest_nodes")
+    @patch("src.algorithms.astar_pathfind_multi_stop")
+    @patch("src.utils.routing.Routing.get_coordinates")
+    def test_get_route(self, mock_get_coordinates, mock_astar, mock_nearest_nodes):
+        # Mock `get_coordinates` to return predefined coordinates
+        mock_get_coordinates.side_effect = [
+            (33.99518, -118.46849),  # Venice Beach
+            (34.04302, -118.26728),  # Staples Center
+            (34.13672, -118.29436),  # Griffith Observatory
+        ]
+
+        # Mock `nearest_nodes` to return predefined node IDs
+        mock_nearest_nodes.side_effect = [1, 2, 3]  # Mock node IDs for the locations
+
+        # Mock `astar_pathfind_multi_stop` to return a predefined route
+        mock_astar.return_value = [1, 4, 5, 2, 6, 3]
+
+        # Test routing function
+        locations = ["Venice Beach", "Staples Center", "Griffith Observatory"]
+        expected_route = [1, 4, 5, 2, 6, 3]
+        actual_route = self.router.get_route(locations)
+
+        # Assert the mocked output
+        self.assertEqual(actual_route, expected_route, "The route does not match the expected output.")
+
+        # Assert that all mocked methods were called with the correct arguments
+        mock_get_coordinates.assert_has_calls([
+            unittest.mock.call("Venice Beach"),
+            unittest.mock.call("Staples Center"),
+            unittest.mock.call("Griffith Observatory"),
+        ])
+        mock_nearest_nodes.assert_has_calls([
+            unittest.mock.call(self.router.road_network, X=-118.46849, Y=33.99518),
+            unittest.mock.call(self.router.road_network, X=-118.26728, Y=34.04302),
+            unittest.mock.call(self.router.road_network, X=-118.29436, Y=34.13672),
+        ])
+        mock_astar.assert_called_once_with(self.router.road_network, [1, 2, 3])
+
+    @patch("osmnx.load_graphml")
+    def test_init_graph_loading(self, mock_load_graphml):
+        # Mock `ox.load_graphml` to return a fake graph object
+        mock_graph = MagicMock()
+        mock_load_graphml.return_value = mock_graph
+
+        # Initialize the `Routing` object
+        router = Routing(self.graph_path)
+
+        # Assert that the graph was loaded correctly
+        self.assertEqual(router.road_network, mock_graph)
+        mock_load_graphml.assert_called_once_with(self.graph_path)
+
 if __name__ == '__main__':
     unittest.main()
