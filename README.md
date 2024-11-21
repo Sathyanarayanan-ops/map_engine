@@ -1,33 +1,30 @@
 # map_engine
 
 
-```python
-project_directory/
-├── src/                          # Source code
-│   ├── algorithms/               # Core algorithm implementations
-│   │   ├── astar.py             # Single-destination A* algorithm
-│   │   ├── multi_stop_astar.py  # Multi-stop A* implementation
-│   │   └── __init__.py
-│   ├── utils/                    # Utility modules
-│   │   ├── graph_loader.py      # Graph loading and preparation
-│   │   ├── visualization.py      # Graph and path visualization
-│   │   └── __init__.py
-│   ├── main.py                  # Main application entry point
-│   └── __init__.py
-│
-├── tests/                        # Test suite
-│   ├── test_astar.py            # Single-destination A* tests
-│   ├── test_astar_multi.py      # Multi-stop A* tests
-│   └── __init__.py
-│
-├── data/                        # Data files
-│   └── blacksburg_road_network.graphml
-│
-├── docs/                        # Documentation
-│   ├── algorithms/
-│   │   ├── astar.md            # Single-destination A* explanation
-│   │   └── multi_stop_astar.md # Multi-stop A* explanation
-│   └── README.md               # Project overview
-│
-└── requirements.txt             # Project dependencies
+map_engine is a Python package designed to calculate the shortest route between a start and end location, with support for up to 5 additional stops. It leverages the A* algorithm for efficient pathfinding and is ideal for applications requiring custom routing logic over a road network.
 
+Features
+
+Single-destination routing: Quickly calculate the shortest path between two locations.
+Multi-stop routing: Add up to 5 additional stops to your route.
+Flexible inputs: Provide locations as an ordered list of addresses or coordinates.
+Modular design: Well-structured modules for algorithms, utilities, and visualizations.
+Integration-ready: Easily integrate with frontend applications, providing optimized routes.
+
+
+```python
+
+
+from src.utils.routing import Routing
+
+# Load the road network
+graph_path = "data/LA_road_network.graphml"
+router = Routing(graph_path)
+
+# Multi-stop route
+locations = ["Venice Beach", "Staples Center", "Griffith Observatory"]
+route = router.get_route(locations)
+print("Multi-stop path:", route)
+
+
+```
