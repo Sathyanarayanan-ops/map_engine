@@ -12,6 +12,14 @@ Modular design: Well-structured modules for algorithms, utilities, and visualiza
 Integration-ready: Easily integrate with frontend applications, providing optimized routes.
 
 Use following code to start using the pkg 
+
+```bash
+    pip install aStarEngine-package
+    pip install geopy osmnx networkx scikit-learn
+```
+
+
+
 ```python
 
 from aStarEngine_package.algorithms.aStar_multi import astar_pathfind_multi_stop
