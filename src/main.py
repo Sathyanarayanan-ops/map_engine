@@ -1,6 +1,6 @@
 import os
 import logging
-from utils.routing import Routing
+from aStarEngine_package.utils.routing import Routing 
 
 def main():
     # Configure logging
@@ -26,3 +26,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+# [tool.setuptools]
+# packages = { find = { where = ["src"] } }
+# package-dir = {"" = "src"}
+

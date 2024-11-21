@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aStarEngine_package_Sathya05"
-version = "0.0.3"
+version = "0.0.16"
 authors = [
   { name="Sathyanarayanan RS", email="sathya05@vt.edu" },
 ]
@@ -20,8 +20,7 @@ classifiers = [
 ]
 
 
-[tool.setuptools.packages.find]
-where = ["src"]
+
 
 
 [project.urls]
