@@ -20,7 +20,7 @@ pip install geopy osmnx networkx scikit-learn
 
 PyPI Link for the package 
 
-[text](https://pypi.org/project/aStarEngine-package/)
+[https://pypi.org/project/aStarEngine-package/](https://pypi.org/project/aStarEngine-package/)
 
 
 ```python
