@@ -14,10 +14,13 @@ Integration-ready: Easily integrate with frontend applications, providing optimi
 Use following code to start using the pkg 
 
 ```bash
-    pip install aStarEngine-package
-    pip install geopy osmnx networkx scikit-learn
+pip install aStarEngine-package
+pip install geopy osmnx networkx scikit-learn
 ```
 
+PyPI Link for the package 
+
+[text](https://pypi.org/project/aStarEngine-package/)
 
 
 ```python
