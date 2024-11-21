@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0", "wheel", "build"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aStarEngine_package_Sathya05"
-version = "0.0.16"
+name = "aStarEngine_package"
+version = "1.0.0"
 authors = [
   { name="Sathyanarayanan RS", email="sathya05@vt.edu" },
 ]

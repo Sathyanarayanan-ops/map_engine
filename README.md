@@ -11,11 +11,12 @@ Flexible inputs: Provide locations as an ordered list of addresses or coordinate
 Modular design: Well-structured modules for algorithms, utilities, and visualizations.
 Integration-ready: Easily integrate with frontend applications, providing optimized routes.
 
-
+Use following code to start using the pkg 
 ```python
 
+from aStarEngine_package.algorithms.aStar_multi import astar_pathfind_multi_stop
 
-from src.utils.routing import Routing
+from aStarEngine_package.utils.routing import Routing 
 
 # Load the road network
 graph_path = "data/LA_road_network.graphml"
